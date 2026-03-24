@@ -1,0 +1,1 @@
+ALTER TABLE social_settings ADD CONSTRAINT social_settings_key_unique UNIQUE (key);

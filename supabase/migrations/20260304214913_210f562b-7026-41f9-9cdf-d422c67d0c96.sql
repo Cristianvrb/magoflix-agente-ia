@@ -1,0 +1,1 @@
+ALTER TABLE public.groups ADD CONSTRAINT groups_wa_group_id_unique UNIQUE (wa_group_id);

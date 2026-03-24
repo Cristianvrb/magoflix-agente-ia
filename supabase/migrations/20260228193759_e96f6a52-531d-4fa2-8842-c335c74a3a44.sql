@@ -1,0 +1,1 @@
+ALTER TABLE public.agent_settings ADD COLUMN welcome_audio_url text NOT NULL DEFAULT '';

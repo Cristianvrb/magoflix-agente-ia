@@ -1,0 +1,1 @@
+ALTER TABLE public.agent_settings ADD COLUMN uazapi_token text NOT NULL DEFAULT '';

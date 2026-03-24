@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX idx_unique_purchase_per_convo ON conversions (conversation_id) WHERE event_name = 'Purchase';

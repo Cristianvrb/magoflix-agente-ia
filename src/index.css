@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 230 15% 97%;
+    --foreground: 230 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 18% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 18% 14%;
+
+    --primary: 152 60% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 12% 94%;
+    --secondary-foreground: 230 18% 14%;
+
+    --muted: 230 10% 95%;
+    --muted-foreground: 230 8% 46%;
+
+    --accent: 152 45% 90%;
+    --accent-foreground: 152 60% 22%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 10% 92%;
+    --input: 230 10% 92%;
+    --ring: 152 60% 42%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 160 30% 6%;
+    --sidebar-foreground: 160 10% 65%;
+    --sidebar-primary: 152 72% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 25% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 160 20% 14%;
+    --sidebar-ring: 152 72% 46%;
+
+    --success: 152 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 210 80% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-1: 152 60% 42%;
+    --chart-2: 210 80% 52%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 60% 55%;
+    --chart-5: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 160 20% 4%;
+    --foreground: 152 10% 92%;
+
+    --card: 160 25% 7%;
+    --card-foreground: 152 10% 92%;
+
+    --popover: 160 25% 7%;
+    --popover-foreground: 152 10% 92%;
+
+    --primary: 152 72% 46%;
+    --primary-foreground: 160 30% 4%;
+
+    --secondary: 160 20% 12%;
+    --secondary-foreground: 152 10% 92%;
+
+    --muted: 160 18% 10%;
+    --muted-foreground: 152 10% 50%;
+
+    --accent: 152 40% 12%;
+    --accent-foreground: 152 60% 70%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 18% 14%;
+    --input: 160 18% 14%;
+    --ring: 152 72% 46%;
+
+    --sidebar-background: 160 30% 3%;
+    --sidebar-foreground: 152 10% 55%;
+    --sidebar-primary: 152 72% 46%;
+    --sidebar-primary-foreground: 160 30% 4%;
+    --sidebar-accent: 160 25% 8%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 160 20% 10%;
+    --sidebar-ring: 152 72% 46%;
+
+    --success: 152 60% 48%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 210 80% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-1: 152 60% 48%;
+    --chart-2: 210 80% 52%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 60% 55%;
+    --chart-5: 0 72% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  :root body {
+    background: linear-gradient(180deg, hsl(240 20% 98%) 0%, hsl(250 25% 93%) 50%, hsl(240 18% 96%) 100%);
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background: hsl(var(--background));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Glow effect utility */
+.glow-primary {
+  box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.4);
+}
+
+/* Sidebar premium styles */
+.sidebar-gradient {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--sidebar-background)) 0%,
+    hsl(var(--sidebar-background) / 0.95) 70%,
+    hsl(160 30% 3%) 100%
+  );
+}
+
+.sidebar-logo-glow {
+  box-shadow: 0 0 24px -4px hsl(var(--sidebar-primary) / 0.5),
+              0 0 8px -2px hsl(var(--sidebar-primary) / 0.3);
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { box-shadow: 0 0 24px -4px hsl(var(--sidebar-primary) / 0.5), 0 0 8px -2px hsl(var(--sidebar-primary) / 0.3); }
+  50% { box-shadow: 0 0 32px -2px hsl(var(--sidebar-primary) / 0.6), 0 0 12px -1px hsl(var(--sidebar-primary) / 0.4); }
+}
+
+.sidebar-separator {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--sidebar-primary) / 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.sidebar-active-glow {
+  box-shadow: 0 0 8px 0 hsl(var(--sidebar-primary) / 0.6);
+}
+
+.sidebar-menu-item {
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu-item:hover {
+  transform: translateX(2px);
+  background: hsl(var(--sidebar-accent) / 0.6);
+  color: hsl(var(--sidebar-accent-foreground));
+}
+
+.sidebar-menu-item-active {
+  transform: none !important;
+}
+
+/* Light theme card glow */
+.light-card-glow {
+  box-shadow: 0 1px 3px 0 hsl(240 20% 60% / 0.06),
+              0 4px 16px -2px hsl(250 30% 60% / 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.light-card-glow:hover {
+  box-shadow: 0 2px 6px 0 hsl(240 20% 60% / 0.1),
+              0 8px 24px -4px hsl(250 30% 60% / 0.14);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(250 60% 42%) 0%, hsl(280 70% 55%) 50%, hsl(320 60% 50%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, hsl(152 60% 70%) 0%, hsl(152 80% 50%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* UTMify-style fade-in-up animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

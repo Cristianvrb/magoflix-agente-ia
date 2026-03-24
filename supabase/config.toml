@@ -1,0 +1,84 @@
+project_id = "mmgcaadogqjtzumwmyec"
+
+[functions.uazapi-webhook]
+verify_jwt = false
+
+[functions.send-message]
+verify_jwt = false
+
+[functions.register-webhook]
+verify_jwt = false
+
+[functions.test-agent]
+verify_jwt = false
+
+[functions.parse-document]
+verify_jwt = false
+
+[functions.agent-playground]
+verify_jwt = false
+
+[functions.fetch-ad-image]
+verify_jwt = false
+
+[functions.pepper-postback]
+verify_jwt = false
+
+[functions.send-group-message]
+verify_jwt = false
+
+[functions.reprocess-webhooks]
+verify_jwt = false
+
+[functions.meta-ads]
+verify_jwt = false
+
+[functions.pepper-sync]
+verify_jwt = false
+
+[functions.admin-fix]
+verify_jwt = false
+
+[functions.fetch-groups]
+verify_jwt = false
+
+[functions.social-publish]
+verify_jwt = false
+
+[functions.social-auto-post]
+verify_jwt = false
+
+[functions.instagram-callback]
+verify_jwt = false
+
+[functions.social-create-post]
+verify_jwt = false
+
+[functions.threads-prospect]
+verify_jwt = false
+
+[functions.threads-viral-detector]
+verify_jwt = false
+
+[functions.process-scheduled-groups]
+verify_jwt = false
+
+[functions.create-whatsapp-group]
+verify_jwt = false
+
+[functions.backfill-ad-attribution]
+verify_jwt = false
+
+[functions.manager-agent]
+verify_jwt = false
+
+[functions.uazapi-qr]
+enabled = true
+verify_jwt = true
+import_map = "./functions/uazapi-qr/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/uazapi-qr/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/uazapi-qr/*.html" ]

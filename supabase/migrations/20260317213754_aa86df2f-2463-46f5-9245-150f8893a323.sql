@@ -1,0 +1,1 @@
+ALTER TABLE agent_settings ADD COLUMN welcome_audio_url_es text NOT NULL DEFAULT '';

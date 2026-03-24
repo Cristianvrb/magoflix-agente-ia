@@ -1,0 +1,1 @@
+ALTER TABLE public.social_metrics ADD CONSTRAINT social_metrics_date_platform_unique UNIQUE (date, platform);

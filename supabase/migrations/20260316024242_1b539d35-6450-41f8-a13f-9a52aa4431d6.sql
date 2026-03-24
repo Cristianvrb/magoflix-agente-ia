@@ -1,0 +1,3 @@
+-- INSERT INTO contact_memories (conversation_id, memory_type, content)
+-- VALUES ('32341ab2-aef3-4fb0-888a-adf05d686f58', 'language', 'language:es')
+-- ON CONFLICT DO NOTHING;
