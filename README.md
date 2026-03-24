@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# 🤖 Magoflix Agente IA
 
-## Project info
+Plataforma de automação de vendas via WhatsApp com agente de Inteligência Artificial integrado.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Stack
 
-## How can I edit this code?
+- React 18 + TypeScript + Vite
+- Supabase (PostgreSQL + Edge Functions + Auth)
+- OpenAI GPT-4
+- UazAPI (gateway WhatsApp)
+- Meta Ads API
+- Pepper Pagamentos
+- Instagram / Threads
 
-There are several ways of editing your application.
+## ⚡ Rodando localmente
 
-**Use Lovable**
+```bash
+# Instalar dependências
+npm install
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+# Configurar variáveis de ambiente
+cp .env.example .env
+# Edite o .env com suas chaves do Supabase
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Acesse: `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌐 Deploy na Vercel
 
-**Use GitHub Codespaces**
+O projeto está configurado para deploy automático na Vercel.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Toda vez que houver um `git push` na branch `main`, a Vercel faz o deploy automaticamente.
 
-## What technologies are used for this project?
+### Variáveis de Ambiente (configurar na Vercel)
 
-This project is built with:
+| Variável | Descrição |
+|----------|-----------|
+| `VITE_SUPABASE_URL` | URL do projeto Supabase |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Chave anon/public do Supabase |
+| `VITE_SUPABASE_PROJECT_ID` | ID do projeto Supabase |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+> Configure em: Vercel → Project → Settings → Environment Variables
 
-## How can I deploy this project?
+## 📦 Scripts disponíveis
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+npm run dev      # Servidor de desenvolvimento
+npm run build    # Build de produção
+npm run preview  # Preview do build
+npm run lint     # Linter
+npm run test     # Testes
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 📁 Estrutura
 
-Yes, you can!
+```
+src/
+├── components/     # Componentes reutilizáveis
+├── hooks/          # Custom hooks
+├── integrations/   # Supabase client e tipos
+├── lib/            # Helpers e utilitários
+└── pages/          # 15 páginas da aplicação
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+supabase/
+├── functions/      # 32 Edge Functions (Deno)
+└── migrations/     # Migrações do banco de dados
+```
